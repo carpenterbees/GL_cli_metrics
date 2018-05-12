@@ -11,9 +11,9 @@ Installation (example for Debian/Ubuntu):
 
 - install Python (either 2,7 or 3 vertion is compatible)
 - install pip:
-   # sudo apt install python-pip
+  - sudo apt install python-pip
 - inlstall library reqired:
-   # pip install psutil
+  - pip install psutil
 - download script to local directory
 
 
@@ -21,6 +21,6 @@ Usage:
 
 ./metrics (cpu | mem)
 
-Scrip reqire arguments:
+Script reqire arguments:
 cpu - outputs CPU metrics
 mem - outputs RAM and Swap metrics.
