@@ -3,19 +3,23 @@
 import sys
 import psutil
 
-metric_to_print = sys.argv[1]
+try:
+	metric_to_print = sys.argv[1]
+except Exception:
+	print "Agrument is requiered, Usage: ./metrics (cpu | mem)"
+	sys.exit(1)
 
-if sys.argv[1] == "cpu":
+if metric_to_print == "cpu":
 #print "input argumet 1 = ", metric_to_print
 	cpu_output = psutil.cpu_times(percpu=False)
-	print "system.cpu.idle", output[3]
-	print "system.cpu.user", output[0]
-	print "system.cpu.guest", output[8]
-	print "system.cpu.iowait", output[4]
-	print "system.cpu.stolen", output[7]
-	print "system.cpu.system", output[2]
-	print "ALL OUTPUT = \n", output
-elif sys.argv[1] == "mem":
+	print "system.cpu.idle", cpu_output[3]
+	print "system.cpu.user", cpu_output[0]
+	print "system.cpu.guest", cpu_output[8]
+	print "system.cpu.iowait", cpu_output[4]
+	print "system.cpu.stolen", cpu_output[7]
+	print "system.cpu.system", cpu_output[2]
+	# print "ALL OUTPUT = \n", cpu_output
+elif metric_to_print == "mem":
 	mem_virt_output = psutil.virtual_memory()
 	mem_swap_output = psutil.swap_memory()
 	print "virtual total", mem_virt_output[0]
@@ -26,6 +30,10 @@ elif sys.argv[1] == "mem":
 	print "swap total", mem_swap_output[0]
 	print "swap used", mem_swap_output[1]
 	print "swap free", mem_swap_output[2]
+else:
+	print "Incorrect agrument, Usage: ./metrics (cpu | mem)"
+
+
 	# print "\n SWAP ALL OUTPUT = \n", mem_swap_output
 
 #	for metric in output:
