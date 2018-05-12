@@ -10,7 +10,7 @@ except Exception:
 	sys.exit(1)
 
 if metric_to_print == "cpu":
-#print "input argumet 1 = ", metric_to_print
+	
 	cpu_output = psutil.cpu_times(percpu=False)
 	print "system.cpu.idle", cpu_output[3]
 	print "system.cpu.user", cpu_output[0]
@@ -18,7 +18,7 @@ if metric_to_print == "cpu":
 	print "system.cpu.iowait", cpu_output[4]
 	print "system.cpu.stolen", cpu_output[7]
 	print "system.cpu.system", cpu_output[2]
-	# print "ALL OUTPUT = \n", cpu_output
+
 elif metric_to_print == "mem":
 	mem_virt_output = psutil.virtual_memory()
 	mem_swap_output = psutil.swap_memory()
@@ -26,15 +26,8 @@ elif metric_to_print == "mem":
 	print "virtual used", mem_virt_output[3]
 	print "virtual free", mem_virt_output[4]
 	print "virtual shared", mem_virt_output[9]
-	# print "\n VIRUAL ALL OUTPUT = \n", mem_virt_output
 	print "swap total", mem_swap_output[0]
 	print "swap used", mem_swap_output[1]
 	print "swap free", mem_swap_output[2]
 else:
 	print "Incorrect agrument, Usage: ./metrics (cpu | mem)"
-
-
-	# print "\n SWAP ALL OUTPUT = \n", mem_swap_output
-
-#	for metric in output:
-#         print metric
