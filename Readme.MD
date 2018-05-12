@@ -11,9 +11,13 @@ Installation (example for Debian/Ubuntu):
 
 - install Python (either 2,7 or 3 vertion is compatible)
 - install pip:
-  'user@localhost:~$ sudo apt install python-pip'
+  '''
+  user@localhost:~$ sudo apt install python-pip
+  '''
 - inlstall library reqired:
-  'user@localhost:~$ pip install psutil'
+  '''
+  user@localhost:~$ pip install psutil'
+  '''
 - download script to local directory
 
 
