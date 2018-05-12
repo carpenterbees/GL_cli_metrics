@@ -1,0 +1,35 @@
+#!/usr/bin/env python
+
+import sys
+import psutil
+
+try:
+	metric_to_print = sys.argv[1]
+except Exception:
+	print "Agrument is requiered, Usage: ./metrics (cpu | mem)"
+	sys.exit(1)
+
+psutil.PROCFS_PATH = '/host-proc'
+
+if metric_to_print == "cpu":
+	
+	cpu_output = psutil.cpu_times(percpu=False)
+	print "system.cpu.idle", cpu_output[3]
+	print "system.cpu.user", cpu_output[0]
+	print "system.cpu.guest", cpu_output[8]
+	print "system.cpu.iowait", cpu_output[4]
+	print "system.cpu.stolen", cpu_output[7]
+	print "system.cpu.system", cpu_output[2]
+
+elif metric_to_print == "mem":
+	mem_virt_output = psutil.virtual_memory()
+	mem_swap_output = psutil.swap_memory()
+	print "virtual total", mem_virt_output[0]
+	print "virtual used", mem_virt_output[3]
+	print "virtual free", mem_virt_output[4]
+	print "virtual shared", mem_virt_output[9]
+	print "swap total", mem_swap_output[0]
+	print "swap used", mem_swap_output[1]
+	print "swap free", mem_swap_output[2]
+else:
+	print "Incorrect agrument, Usage: ./metrics (cpu | mem)"
