@@ -7,16 +7,17 @@ This script was creted as a response on entry task for joining [DevOps GL ProCam
 Detailed task description can be found in [task_deskription.txt file](task_deskription.txt)
 
 
+### Running on local machine:
 ### Installation (example for Debian/Ubuntu):
 
-- install Python (either 2.7 or 3 vertion is compatible)
+- install Python (version 2.7 is compatible)
 - install pip:
   ```
   user@localhost:~$ sudo apt install python-pip
   ```
 - inlstall library reqired:
   ```
-  user@localhost:~$ pip install psutil'
+  user@localhost:~$ pip install psutil
   ```
 - download script to local directory
 
@@ -25,6 +26,9 @@ Detailed task description can be found in [task_deskription.txt file](task_deskr
 ```
 ./metrics (cpu | mem)
 ```
-Script reqire arguments:
+Script reqires one of the arguments:
 * cpu - outputs CPU metrics
 * mem - outputs RAM and Swap metrics.
+
+
+### Running in Docker: 
