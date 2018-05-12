@@ -7,7 +7,7 @@ This script was creted as a response on entry task for joining [DevOps GL ProCam
 Detailed task description can be found in [task_deskription.txt file](task_deskription.txt)
 
 
-Installation (example for Debian/Ubuntu):
+## Installation (example for Debian/Ubuntu):
 
 - install Python (either 2,7 or 3 vertion is compatible)
 - install pip:
@@ -21,10 +21,10 @@ Installation (example for Debian/Ubuntu):
 - download script to local directory
 
 
-Usage:
-
+## Usage:
+```
 ./metrics (cpu | mem)
-
+```
 Script reqire arguments:
-cpu - outputs CPU metrics
-mem - outputs RAM and Swap metrics.
+* cpu - outputs CPU metrics
+* mem - outputs RAM and Swap metrics.
