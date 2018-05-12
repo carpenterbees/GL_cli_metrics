@@ -1,0 +1,78 @@
+As a DevOps engineer you need to collect metrics about your linux server. Unfortunately you cannot use any monitoring solution and need to implement something by your own.
+
+Implement a script which prints basic information about your OS to console.
+
+Package your service into Docker container (Optional).
+
+Write README.md file with documentation about your script/container.
+
+Publish the project to GitHub.
+
+Send us a link to GitHub repository with your project.
+
+Metrics collection script
+You may use any language of your choice to implement the script (despite this we recommend to use either Python or Ruby). 
+
+
+The script should accept a single parameter to specify which metrics set to print:
+
+cpu - prints CPU metrics
+
+mem - prints RAM metrics
+
+CPU Metrics
+$ ./metrics cpu
+
+
+Sample output:
+
+  system.cpu.idle 78.8
+
+  system.cpu.user 17.3
+
+  system.cpu.guest 0.0
+
+  system.cpu.iowait 1.3
+
+  system.cpu.stolen 0.0
+
+  system.cpu.system 2.5
+
+Memory Metrics
+$ ./metrics mem
+
+
+Sample output:
+
+virtual total 16712351744
+
+virtual used 9190146048
+
+virtual free 1391624192
+
+virtual shared 287655116
+
+swap total 0
+
+swap used 0
+
+swap free 0
+
+Docker (optional)
+You need to describe a Dockerfile to package and execute your script. 
+
+
+There are several challenges you may face:
+
+How to display information about processes running on the host machine from within container environment (think about pid namespaces).
+
+How to display usernames for processes running on the host machine from within container environment (think how linux resolves uid to username and docker volumes).
+
+Readme.MD
+You need to describe how to use your script or Docker image. Look at https://hub.docker.com for examples of docker images documentation.
+
+GitHub
+You need to use GIT while implementing your project. Use your own account at GitHub (or create a new one if you still do not have one) and publish your project there. Send us a link to your project.
+
+Reference Materials
+If you decide to use Python for this project we recommend to look at https://psutil.readthedocs.io - cross-platform library for retrieving information on running processes and system utilization
