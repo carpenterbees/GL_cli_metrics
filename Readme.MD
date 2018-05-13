@@ -13,11 +13,11 @@ Detailed task description can be found in [task_deskription.txt file](task_deskr
 - install Python (version 2.7 is compatible)
 - install pip:
   ```
-  user@localhost:~$ sudo apt install python-pip
+  sudo apt install python-pip
   ```
 - inlstall library reqired:
   ```
-  user@localhost:~$ pip install psutil
+  pip install psutil
   ```
 - download script to local directory
 
