@@ -32,3 +32,13 @@ Script reqires one of the arguments:
 
 
 ### Running in Docker: 
+
+
+Containerized version. You need Docker installed on your box.
+Docker container is built an can be pulled from docker-hub: [obormetskyi/metrics](https://hub.docker.com/r/obormetskyi/metrics/).
+
+
+### Usage:
+```
+sudo docker run -it obormetskyi/metrics ./metrics (cpu | mem)
+```
